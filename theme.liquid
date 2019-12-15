@@ -1,0 +1,21 @@
+<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}">
+  <head>
+  
+  
+    //Place befor Closing Head tag
+    {{ '//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css' | stylesheet_tag }}
+    {{ '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' | stylesheet_tag }}
+    {{ 'quickview.scss.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body>
+  
+    //Place befor Closing Body tag
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    {{ '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js' | script_tag }}
+    {{ 'quickview.js' | asset_url | script_tag }}
+    <script>{% capture content %}{% include 'quickview' %}{% endcapture %}
+      var content = {{ content | json }};
+    </script>
+  </body>
+</html>
