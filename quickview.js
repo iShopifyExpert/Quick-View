@@ -34,7 +34,14 @@ function quickView() {
 
           $('.codehouse-product-images').slick({
             'dots': false,
-            'arrows': false,
+            'arrows': true,
+            'nextArrow': '<button class="slick-prev slick-arrow slick-disabled" aria-label="Previous" type="button" aria-disabled="true" style=""><svg viewBox="0 0 100 100"><path d="M 20,50 L 60,90 L 60,85 L 25,50  L 60,15 L 60,10 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button>',
+            'prevArrow': '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="" aria-disabled="false"><svg viewBox="0 0 100 100"><path d="M 20,50 L 60,90 L 60,85 L 25,50  L 60,15 L 60,10 Z" class="arrow"></path></svg></button>',
+            'centerMode': true,
+            'swipeToSlide': true,
+            'infinite': true,
+            'slidesToShow': '1',
+            'slidesToScroll': '1',
             'respondTo': 'min',
             'useTransform': false
           }).css('opacity', '1');
@@ -171,7 +178,6 @@ function quickView() {
 
 $(window).resize(function () {
   if ($('#quick-view').is(':visible')) {
-    $('.codehouse-product-images').slick('setPosition')
-    $('.codehouse-product-images').slick({dots: true, swipeToSlide: true, infinite: true, slidesToShow: 1.5, slidesToScroll: 1.5});
+    $('.codehouse-product-images').slick('setPosition');
   }
 });
